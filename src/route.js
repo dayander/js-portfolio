@@ -19,6 +19,7 @@ import BlogPostItem from './components/pages/blogPostItem';
 import Admin from './components/admin/Admin';
 import ProjectList from './components/projectList';
 import ProjectTemplate from './components/projects/projectTemplate';
+import PageShell from './components/pages/PageShell';
 //import Main from './main';
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
@@ -54,16 +55,16 @@ const routes = (
         <Switch>
 
 
-            <Route exact={true} path="/" component={HomePage}/>
+            <Route exact={true} path="/" component={PageShell(HomePage)}/>
 
 
 
-            <Route exact={true} path="/work" component={ProjectList}/>
+            <Route exact={true} path="/work" component={PageShell(ProjectList)}/>
 
 
-            <Route path="/vim" component={ProjectTemplate}/>
-            <Route path="/alc" component={ProjectTemplate}/>
-            <Route path="/comom" component={ProjectTemplate}/>
+            <Route path="/vim" component={PageShell(ProjectTemplate)}/>
+            <Route path="/alc" component={PageShell(ProjectTemplate)}/>
+            <Route path="/comom" component={PageShell(ProjectTemplate)}/>
             <Route path="/contact" component={ContactForm}/>
             <Route path="/blog" component={BlogPostList}/>
             <Route path="/post/:title" component={BlogPostItem}/>

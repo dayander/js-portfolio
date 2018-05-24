@@ -158,3 +158,35 @@ a:hover{
     color: #333333 !important;
   }
 }
+
+
+
+.page {
+
+
+}
+
+
+.SlideIn-appear {
+  transform: translate(100px,0) ;
+  -webkit-transform: translate(100px,0);
+
+
+  -moz-transform: translate(100px,0);
+  -o-transform: translate(100px,0);
+  -ms-transform: translate(100px,0);
+  opacity: .5;
+}
+
+.SlideIn-appear.SlideIn-appear-active {
+  opacity: 1;
+  transform: translate(0, 0);
+  -webkit-transform: translate(0, 0);
+
+  -moz-transform: translate(0, 0);
+  -o-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  transition: all 0.5s ease-in;
+}
+
+
