@@ -124,7 +124,7 @@ class HomePage extends React.Component{
                 <div className='container'>
                     <h1>Anderson Day</h1>
 
-                    <h2>I am {this.state.header[this.state.counter]}</h2>
+                    <h2>I am {this.state.header[0]}</h2>
                 </div>
             </div>
 
