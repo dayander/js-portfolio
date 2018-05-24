@@ -22,15 +22,15 @@ class Menu extends React.Component{
             <div ref={(app) => { this.app = app; }}>
 
                 <a className="skip-link screen-reader-text" href="#content">Skip to content</a>
-            <Navbar inverse fixedTop>
+            <Navbar collapseOnSelect inverse fixedTop>
                 <Navbar.Header>
                     <Navbar.Brand>
                         <Link to="/">Anderson Day</Link>
                     </Navbar.Brand>
-                    <Navbar.Toggle />
+                    <Navbar.Toggle   />
                 </Navbar.Header>
                 <Navbar.Collapse>
-                    <Nav>
+                    <Nav onSelect={()=> null}>
                         <LinkContainer to="/">
                             <NavItem eventKey={1} >Home</NavItem>
                         </LinkContainer>

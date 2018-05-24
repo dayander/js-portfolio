@@ -6,8 +6,8 @@ import Header from "../Header";
 import PullQuote from "../pullQuote";
 import {Link} from 'react-router-dom';
 import Picture from "./Picture";
-import {Row, Col} from 'react-bootstrap';
-
+import {Row, Col, Well} from 'react-bootstrap';
+import ProjectLarge from '../projectLarge'
 
 
 class ProjectPage extends React.Component{
@@ -54,7 +54,21 @@ class ProjectPage extends React.Component{
     render(){
 
 console.log(this.props)
+        const proejctList = this.props.projects.projects.map((project, i)=>{
 
+            if(project !== this.state.project){
+            return(
+
+
+                    <Col className={'container'} key={i} xs={12} sm={6} bsStyle='project-list'>
+                        {/*<BookItem  _id={project._id} title={project.title} images={project.images} description={project.description} price={project.price} />*/}
+                        <ProjectLarge companyName={project.companyName} projectHeading={project.projectHeading} getter={project.getter} to={project.getter} img={project.bgImage} styleClass={'small'} />
+                    </Col>
+
+
+            )
+            }
+        });
 
 
         // console.log('test', this.state.project);
@@ -98,9 +112,14 @@ console.log(this.props)
                     </Col>
                     </div>
                 </Row>
-
-
-
+<Well>
+                <Row>
+                    <div className="container">
+                        <h2>Onward</h2>
+                    </div>
+                    {proejctList}
+                </Row>
+</Well>
 
 
 
