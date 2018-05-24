@@ -101,18 +101,18 @@ a:hover {
 .SlideIn-appear {
   transform: translate3d(0px, 0, -100px), scale(0.6);
   -webkit-transform: translate3d(0px, 0, -100px) scale(0.6);
-  -moz-transform: translate(100px, 0);
-  -o-transform: translate(100px, 0);
-  -ms-transform: translate(100px, 0);
+  -moz-transform: translate3d(0px, 0, -100px), scale(0.6);
+  -o-transform: translate3d(0px, 0, -100px), scale(0.6);
+  -ms-transform: translate3d(0px, 0, -100px), scale(0.6);
   opacity: .5; }
 
 .SlideIn-appear.SlideIn-appear-active {
   opacity: 1;
   transform: translate3d(0, 0, 0) scale(1);
   -webkit-transform: translate3d(0, 0, 0) scale(1);
-  -moz-transform: translate(0, 0);
-  -o-transform: translate(0, 0);
-  -ms-transform: translate(0, 0);
+  -moz-transform: translate3d(0, 0, 0) scale(1);
+  -o-transform: translate3d(0, 0, 0) scale(1);
+  -ms-transform: translate3d(0, 0, 0) scale(1);
   transition: all 0.5s ease; }
 
 /*# sourceMappingURL=style.css.map */
