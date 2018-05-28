@@ -20,7 +20,7 @@ class PullQuote extends React.Component{
                     <div className="container pullquote">
                         <div className="pullquote-inner">
 
-                        <h2>{this.props.header}</h2>
+                        <h2><span className='underline' >{this.props.header}</span></h2>
                         <p>
                             {this.props.body}
                         </p>

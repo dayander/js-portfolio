@@ -12,6 +12,7 @@ import {Link} from 'react-router';
 
 import PullQuote from '../pullQuote';
 import ProjectLarge from '../projectLarge';
+import Header from '../Header';
 
 import {updateCounter} from "../../actions/headerActions";
 
@@ -118,15 +119,14 @@ class HomePage extends React.Component{
 
         return(
             <div>
+            <Header color={"#fff"} img={'/images/homePageHeader.jpg'} h1={"Anderson Day"} h2={`I am ${this.state.header[0]}`}/>
+            {/*<div style={{ backgroundImage: `url(/images.homePageHeader.jpg)`}}  className='jumbotron header-image'>*/}
+                {/*<div className='container'>*/}
+                    {/*<h1>Anderson Day</h1>*/}
 
-
-            <div  className='jumbotron header-image'>
-                <div className='container'>
-                    <h1>Anderson Day</h1>
-
-                    <h2>I am {this.state.header[0]}</h2>
-                </div>
-            </div>
+                    {/*<h2>I am {this.state.header[0]}</h2>*/}
+                {/*</div>*/}
+            {/*</div>*/}
 
 
 
@@ -139,16 +139,23 @@ class HomePage extends React.Component{
 />
                 <PullQuote
                     header={"Developing From the User's Perspective"}
-                    body={`Studying Experience Architecture has allowed
-                     me to write code from the users perspective.
-                     Writing accessibile code, and user-first code
-                      allows me to write more meaningful code for you.`}
+                    body={`Studying Experience Architecture has taught
+                     me how to craft experiences from the users perspective.
+                    Designing accessible experiences, helps create more meaningful experiences for everyone.`}
                 />
                 <PullQuote
                     header={'Design With Research'}
                     body={'My background comes from design and creative thinking. ' +
-                    'Writing code is my new thing. I love combining my experience ' +
-                    'with deisgn and problem solving to make rad products people CAN use.'}
+                    'I love combining my experience ' +
+                    'with design and problem solving to make rad products people CAN use.'}
+                />
+
+                <PullQuote
+                    header={'Creating Tool Box'}
+                    body={"I've worked with Javascript, React, Node, Express, Redux, WCAG 2.0, Section508, HTML," +
+                    " CSS, SCSS, Python and Django, Php, CMS including Wordpress, Adobe Business Catalyst, Concrete" +
+                    " 5 and Drupal. I’ve also used the Adobe Creative Cloud, Microsoft Office, Universal Design," +
+                    " User Research, Screen Reader - Voiceover"}
                 />
 
 
