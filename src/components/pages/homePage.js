@@ -134,8 +134,7 @@ class HomePage extends React.Component{
         <PullQuote
             header={'Creating for Everyone'}
             body={'I am an accessibility advocate. My interest ' +
-            'currently lies in web accessibility. I am passionate about ' +
-            'incorporating accessibility from the ground up in the design process.  '}
+            'currently lies in web accessibility and universal design.  '}
 />
                 <PullQuote
                     header={"Developing From the User's Perspective"}
