@@ -56,7 +56,7 @@ class Menu extends React.Component{
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
-                <div id="content"></div>
+
             </div>
         )
     }
