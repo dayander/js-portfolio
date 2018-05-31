@@ -33,6 +33,14 @@ class ContactFrom extends React.Component{
     }
     componentDidMount(){
         document.title = 'Contact Anderson Day';
+
+
+
+        // Set focus to the content container
+        document.getElementById('app').focus();
+
+        // Ensure the viewport returns to the top of the document window
+        window.scrollTo(0, 0);
     }
 
     render(){
