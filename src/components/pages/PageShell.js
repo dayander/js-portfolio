@@ -10,7 +10,7 @@ const PageShell = Page => {
         '/comom'
     ];
     return props =>
-        <div className="page">
+        <div id="content" className="page">
             <ReactCSSTransitionGroup
                 transitionAppear={true}
                 transitionAppearTimeout={600}
