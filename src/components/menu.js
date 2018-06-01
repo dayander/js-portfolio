@@ -24,9 +24,9 @@ class Menu extends React.Component{
                 <a className="skip-link screen-reader-text" href="#content">Skip to content</a>
             <Navbar collapseOnSelect inverse fixedTop>
                 <Navbar.Header>
-                    <Navbar.Text>
+                    <Navbar.Brand>
                         Anderson Day
-                    </Navbar.Text>
+                    </Navbar.Brand>
                     <Navbar.Toggle   />
                 </Navbar.Header>
                 <Navbar.Collapse>
