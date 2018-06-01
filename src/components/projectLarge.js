@@ -34,7 +34,7 @@ class ProjectLarge extends React.Component{
                 <div className="project-large content">
                 <div className="content-align">
                 <h2>{this.state.companyName}</h2>
-                <h3>{this.state.projectHeading}</h3>
+                <p className="subheading">{this.state.projectHeading}</p>
                 </div>
                 </div>
 

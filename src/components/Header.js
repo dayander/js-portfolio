@@ -18,7 +18,7 @@ class Header extends React.Component{
     render(){
         const h2 = <h2>{(this.state.h2)}</h2>
         return(
-            <div id="content" >
+            <div id="content"  tabIndex="-1">
                 <div style={{ backgroundImage: `url(${this.state.img})`}} className='jumbotron header-image'>
                     <div style={{color: this.state.color}} className='container'>
                         <h1 >{this.state.h1}</h1>

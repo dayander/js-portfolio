@@ -115,6 +115,9 @@ a:hover {
   -ms-transform: translate3d(0, 0, 0) scale(1);
   transition: all 0.5s ease; }
 
+.subheading {
+  font-size: 24px; }
+
 /* transition: background-size 0.25s ease-in; */
 
 /*# sourceMappingURL=style.css.map */
