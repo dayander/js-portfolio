@@ -20,7 +20,7 @@ import PostLarge from '../postLarge';
 class BlogPostList extends React.Component{
     constructor(props) {
         super(props);
-
+        console.log(props)
         this.state = {
             h1: "Anderson's Blog Posts",
             h2: "A place where I share my ideas and research",
@@ -51,13 +51,15 @@ class BlogPostList extends React.Component{
     render(){
         const blogPostList = this.props.posts.posts.map((post, i)=>{
             return(
-                <Col xs={12}  key={i}>
+                <Row key={i} className='blog-list-item'>
+                    <Col xs={12}  >
 
-                    <Link params={this.props.posts.posts} to={'/post' +post.slug}>
-                        <PostLarge title={post.name} />
-                    </Link>
+                        <Link params={this.props.posts.posts} to={'/post' +post.slug} >
+                            <PostLarge  title={post.name} content={post.content} />
+                        </Link>
 
-                </Col>
+                    </Col>
+                </Row>
             )
         });
 
@@ -70,14 +72,14 @@ class BlogPostList extends React.Component{
 
                 <Row style={{marginTop: '15px'}}>
                     <div className="container">
-                    <h2>Area Under Development</h2>
-                        <p>I'm busy working on other projects right now and wanted a place where to show my work. Soon
-                        this will also be a place to share my thinking.</p>
+                    <h2>What I've been thinking about.</h2>
+                        <p>Find a range of topics.
+                            Read about what interests me and what I think it useful information to share</p>
                     </div>
                     {blogPostList}
                 </Row>
                 <Switch>
-                <Route path='/post/test' component={BlogPostItem}/>
+                <Route path='/post/:test' component={BlogPostItem}/>
                 </Switch>
 
             </div>

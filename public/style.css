@@ -147,6 +147,38 @@ a:hover {
     display: none;
   }
 }
+.blog-outer-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.blog-list-item {
+  min-height: 200px;
+  max-height: 300px;
+  overflow: hidden;
+  padding: 20px 0;
+}
+
+.blog-list-item-img {
+  margin: 0 auto;
+  max-width: 100%;
+  justify-content: center;
+}
+
+.img-hide {
+  overflow: hidden;
+}
+
+.readMore {
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+  background: black;
+  z-index: 20;
+  height: 50px;
+}
+
 /* transition: background-size 0.25s ease-in; */
 
 /*# sourceMappingURL=style.css.map */

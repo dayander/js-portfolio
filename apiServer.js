@@ -168,6 +168,11 @@ app.post('/post/:title', function(req, res){
 });
 
 
+app.post('/insert', function (req, res) {
+    console.log("hey")
+})
+
+
 
 
 

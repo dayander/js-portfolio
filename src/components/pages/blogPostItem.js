@@ -49,7 +49,9 @@ class BlogPostItem extends React.Component{
 
 
     render(){
-
+const bodyText = props =>
+    {
+        };
 
 
         return(
@@ -57,7 +59,7 @@ class BlogPostItem extends React.Component{
                 <Header h1={this.state.post.title}  h2={this.state.post.name}/>
 
 
-<h2>{this.state.post.name}</h2>
+<div className='bodyContent' dangerouslySetInnerHTML={{__html:this.state.post.content}}></div>
 
             </div>
         )
