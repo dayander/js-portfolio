@@ -13,53 +13,60 @@ import {StaticRouter} from 'react-router-dom';
 import reducers from './src/reducers/index';
 import routes from './src/route';
 
-function handleRender(req, res){
+function handleRender2(req, res){
+    console.log("blog post handler");
 
 
-        axios.get('http://localhost:4001/posts')
-            .then(function(response){
-                // var myHtml = JSON.stringify(response.data);
-                // res.render('index', {myHtml});
-
-                const initStore = {};
-
-                response.data.forEach(post =>{
-
-                    initStore[post.name] = post;
-                });
 
 
-                // STEP-1 CREATE A REDUX STORE ON THE SERVER
-                const store = createStore(reducers, {"projects":{"projects":[], }, "initStore": initStore, "contact": null, "posts":{"posts":response.data }} );
+
+    axios.get(`http://localhost:4001/posts/${req.params.name}`)
+        .then(function(response){
+            // var myHtml = JSON.stringify(response.data);
+            // res.render('index', {myHtml});
+
+            const initStore = {};
+            console.log(response.data);
 
 
-                // STEP-2 GET INITIAL STATE FROM THE STORE
-                const initialState = JSON.stringify(store.getState()).replace(/<\/script/g, '<\\/script').replace(/<!--/g, '<\\!--');
-                // STEP-3 IMPLEMENT REACT-ROUTER ON THE SERVER TO INTERCEPT CLIENT REQUESTs AND DEFINE WHAT TO DO WITH THEM
-                const context = {};
-                console.log("How context looks like? ", context.url);
-                const reactComponent = renderToString(
-                    <Provider store={store}>
-                        <StaticRouter
-                            location={req.url}
-                            context={context}>
-                            {routes}
-                        </StaticRouter>
-                    </Provider>
-                );
 
-                if (context.url) {
-                    // can use the `context.status` that
-                    // we added in RedirectWithStatus
-                    redirect(context.status, context.url)
-                } else {
-                    res.status(200).render('index', {reactComponent, initialState})
-                }
 
-            })
-            .catch(function(err){
-                console.log('#Initial Server-side rendering error', err);
-            })
+            // STEP-1 CREATE A REDUX STORE ON THE SERVER
+            const store = createStore(reducers, {"projects":{"projects":[], }, "initStore": initStore, "contact": null, "posts":{"posts":[response.data] }} );
+
+
+            // STEP-2 GET INITIAL STATE FROM THE STORE
+            const initialState = JSON.stringify(store.getState()).replace(/<\/script/g, '<\\/script').replace(/<!--/g, '<\\!--');
+            // STEP-3 IMPLEMENT REACT-ROUTER ON THE SERVER TO INTERCEPT CLIENT REQUESTs AND DEFINE WHAT TO DO WITH THEM
+            const context = {};
+            console.log("How context looks like? ", context.url);
+            const reactComponent = renderToString(
+                <Provider store={store}>
+                    <StaticRouter
+                        location={req.url}
+                        context={context}>
+                        {routes}
+                    </StaticRouter>
+                </Provider>
+            );
+
+            if (context.url) {
+                // can use the `context.status` that
+                // we added in RedirectWithStatus
+                console.log("this is the error spot");
+                redirect(context.status, context.url)
+            } else {
+                console.log('here');
+                res.status(200).render('index', {reactComponent, initialState})
+                console.log("then here")
+            }
+
+        })
+        .catch(function(err){
+
+
+            console.log('#Initial Server-side rendering error', err);
+        })
 
 
 
@@ -111,4 +118,4 @@ function handleRender(req, res){
 //         })
 }
 
-module.exports = handleRender
+module.exports = handleRender2

@@ -15,6 +15,7 @@ import routes from './src/route';
 
 function handleRender(req, res){
 
+
     // if(req.url=='/blog'){
     //     axios.get('http://localhost:4001/posts')
     //         .then(function(response){
@@ -76,7 +77,7 @@ function handleRender(req, res){
 
 
             // STEP-1 CREATE A REDUX STORE ON THE SERVER
-            const store = createStore(reducers, {"projects":{"projects":response.data, }, "initStore": initStore, "contact": null, "posts":{"posts":[] }} );
+            const store = createStore(reducers, { "initStore": initStore, "projects":{"projects":response.data, }, "contact": null, "posts":{"posts":[] }} );
 
             // STEP-2 GET INITIAL STATE FROM THE STORE
             const initialState = JSON.stringify(store.getState()).replace(/<\/script/g, '<\\/script').replace(/<!--/g, '<\\!--');

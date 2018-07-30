@@ -9,6 +9,8 @@ import Header from "../Header";
 import { Route, Switch, Link, withRouter} from 'react-router-dom';
 import BlogPostItem from './blogPostItem';
 import PostLarge from '../postLarge';
+import ProjectTemplate from '../projects/projectTemplate';
+import PageShell from './PageShell';
 
 
 
@@ -20,7 +22,6 @@ import PostLarge from '../postLarge';
 class BlogPostList extends React.Component{
     constructor(props) {
         super(props);
-        console.log(props)
         this.state = {
             h1: "Anderson's Blog Posts",
             h2: "A place where I share my ideas and research",
@@ -54,7 +55,7 @@ class BlogPostList extends React.Component{
                 <Row key={i} className='blog-list-item'>
                     <Col xs={12}  >
 
-                        <Link params={this.props.posts.posts} to={'/post' +post.slug} >
+                        <Link params={`${this.props.match.url}${post.slug}`} to={`${this.props.match.url}${post.slug}`} >
                             <PostLarge  title={post.name} content={post.content} />
                         </Link>
 
@@ -79,7 +80,7 @@ class BlogPostList extends React.Component{
                     {blogPostList}
                 </Row>
                 <Switch>
-                <Route path='/post/:test' component={BlogPostItem}/>
+                <Route path='/blog/:test' component={PageShell(BlogPostItem)}/>
                 </Switch>
 
             </div>

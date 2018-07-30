@@ -55,7 +55,12 @@ class ProjectList extends React.Component{
                 <Row  key={i}>
                     <Col xs={12} bsStyle='project-list'>
                     {/*<BookItem  _id={project._id} title={project.title} images={project.images} description={project.description} price={project.price} />*/}
-                        <ProjectLarge companyName={project.companyName} projectHeading={project.projectHeading} getter={project.getter} to={project.getter} img={project.bgImage} styleClass={'small'} />
+                        <ProjectLarge companyName={project.companyName}
+                                      projectHeading={project.projectHeading}
+                                      getter={project.getter}
+                                      to={project.getter}
+                                      img={project.bgImage}
+                                      styleClass={'small'} />
                     </Col>
                 </Row>
 
@@ -70,6 +75,7 @@ class ProjectList extends React.Component{
                 <Well>
                 {proejctList}
                 </Well>
+
             </div>
         )
     }

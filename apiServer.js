@@ -140,11 +140,13 @@ app.get('/posts', function(req, res){
 app.get('/posts/:title', function(req, res){
 
     var name = req.params.title;
-    console.log(name);
-   Post.findOne(({name: name}),function(err, post){
+    name = '/'+ name;
+
+   Post.findOne(({'slug': name}),function(err, post){
         if(err){
             throw err;
         }
+        console.log(post)
 
         res.json(post)
     })

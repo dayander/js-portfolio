@@ -112,7 +112,7 @@ class HomePage extends React.Component{
                               img={projects.bgImage}/>
             )
         });
-
+        
 
 
 

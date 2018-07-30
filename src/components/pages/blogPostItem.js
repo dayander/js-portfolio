@@ -11,7 +11,12 @@ class BlogPostItem extends React.Component{
         super(props);
 
         this.state={
-            post: this.props.posts.posts.find(x => x.name.toLowerCase() == this.props.match.params.title),
+            post: this.props.posts.posts.find(x => "/blog"+ x.slug.toLowerCase() == this.props.match.url),
+            //index: this.props.posts.posts.findIndex(x =>  x.slug === this.props.match.url),
+            //this.props.projects.projects.find(x => x.getter === this.props.match.url),
+            title: '',
+            name: '',
+
             // index: this.props.projects.projects.findIndex(x => x.getter === this.props.match.url),
 
             // projects: [],
@@ -23,27 +28,22 @@ class BlogPostItem extends React.Component{
     }
 
 
+    componentWillMount(){
+        console.log('will', this.state.post)
+    }
+
     componentDidMount(){
+
+
+        //this.props.getPosts();
+
         document.title = this.state.post.title +' || Anderson Day';
-
-
 
         // Set focus to the content container
         document.getElementById('app').focus();
 
-        // Ensure the viewport returns to the top of the document window
+
         window.scrollTo(0, 0);
-
-
-        //this.props.getOne(this.props.match.params.title);
-
-
-        this.props.getPosts();
-
-
-
-
-
 
     }
 
@@ -51,6 +51,9 @@ class BlogPostItem extends React.Component{
     render(){
 const bodyText = props =>
     {
+        if(this.state.post.title){
+            console.log(this.state.post.title)
+        }
         };
 
 
@@ -61,13 +64,14 @@ const bodyText = props =>
 
 <div className='bodyContent' dangerouslySetInnerHTML={{__html:this.state.post.content}}></div>
 
+
             </div>
         )
     }
 }
 const mapStateToProps = (state)=>{
     return{
-    posts:state.posts,
+    posts: state.posts,
 
     }
 };

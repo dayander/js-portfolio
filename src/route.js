@@ -66,8 +66,13 @@ const routes = (
             <Route path="/alc" component={PageShell(ProjectTemplate)}/>
             <Route path="/comom" component={PageShell(ProjectTemplate)}/>
             <Route path="/contact" component={ContactForm}/>
-            <Route path="/blog" component={BlogPostList}/>
-            <Route path="/post/:title" component={BlogPostItem}/>
+            <Route path="/blog/:title" component={BlogPostItem}/>
+            <Route path="/blog" component={BlogPostList}>
+
+            </Route>
+
+
+
 
 
 

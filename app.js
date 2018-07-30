@@ -11,6 +11,7 @@ var httpProxy = require('http-proxy');
 
 var requestHandler = require('./requestHandler');
 var blogHandler = require('./blogHandler');
+var blogHandler2 = require('./blogHandler2');
 
 
 
@@ -39,10 +40,10 @@ app.use('/api', function(req, res){
 
 
 
-
-
+app.get('/blog/test3', blogHandler);
+app.get('/blog/:name', blogHandler);
 app.get('/blog', blogHandler);
-app.get('/post/:title', blogHandler);
+
 
 app.get('*', requestHandler);
 

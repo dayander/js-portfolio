@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import Header from "../Header";
 import PullQuote from "../pullQuote";
-import {Link} from 'react-router-dom';
+
 import Picture from "./Picture";
 import {Row, Col, Well} from 'react-bootstrap';
 import ProjectLarge from '../projectLarge'
@@ -45,6 +45,8 @@ class ProjectPage extends React.Component{
 
         // Ensure the viewport returns to the top of the document window
         window.scrollTo(0, 0);
+        console.log(this.props)
+        console.log(this.state.index)
 
 
 
@@ -53,7 +55,7 @@ class ProjectPage extends React.Component{
 
     render(){
 
-console.log(this.props)
+
         const proejctList = this.props.projects.projects.map((project, i)=>{
 
             if(project !== this.state.project){
